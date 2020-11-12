@@ -8,7 +8,6 @@ function Header(props) {
                 {props.rock} <br></br>
                 {props.paper} <br></br>
                 {props.scissors}
-
             </div>
             <div className="score-container">
                 <div className="score-text">SCORE</div>

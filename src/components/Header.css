@@ -1,8 +1,8 @@
 .nav-container {
-    border: 2px solid hsl(217, 16%, 45%);
+    border: 3px solid hsl(217, 16%, 45%);
     border-radius: 12px;
     font-weight: 700;
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 .title-container {
@@ -15,7 +15,7 @@
     float: right;
     background: rgb(241, 241, 225);
     border-radius: 8px;
-    padding: 15px 30px;
+    padding: 11px 36px;
 }
 
 .score-text {
@@ -28,5 +28,4 @@
     text-align: center;
     color:  hsl(229, 25%, 31%);
     font-size: 42px;
-    font-weight: 700;
 }

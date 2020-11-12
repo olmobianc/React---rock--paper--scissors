@@ -1,0 +1,14 @@
+.main-container {
+    width: 50%;
+    margin: 60px auto 20px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.triangle-container {
+    background-image: url("../images/bg-triangle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px 200px 10px;
+    min-height: 50vh;
+}

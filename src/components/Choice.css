@@ -1,0 +1,31 @@
+.elem-container {
+    max-width: 100px;
+    background: white;
+    border: 14px solid hsl(349, 71%, 52%);
+    border-radius: 50%;
+}
+
+.paper-elem {
+    background-image: url("../images/icon-paper.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 60px;
+    padding: 20px;
+
+}
+
+.scissors-elem {
+    background-image: url("../images/icon-scissors.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 60px;
+    padding: 20px;
+}
+
+.rock-elem {
+    background-image: url("../images/icon-rock.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 60px;
+    padding: 20px;
+}
