@@ -1,12 +1,21 @@
+import React from "react"
+import Header from "./components/Header"
 
 import './App.css';
+
+let userScore = 12
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>ciao</p>
-      </header>
+      <div className="App-header">
+        <Header 
+          rock = "ROCK"
+          paper = "PAPER"
+          scissors = "SCISSORS"
+          score = {userScore}
+         />
+      </div>
     </div>
   );
 }

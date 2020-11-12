@@ -1,0 +1,32 @@
+.nav-container {
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 12px;
+    font-weight: 700;
+    padding: 20px;
+}
+
+.title-container {
+    display: inline-block;
+    font-size: 32px;
+    line-height: 28px;
+}
+
+.score-container {
+    float: right;
+    background: rgb(241, 241, 225);
+    border-radius: 8px;
+    padding: 15px 30px;
+}
+
+.score-text {
+    color: hsl(229, 64%, 46%);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.score-value {
+    text-align: center;
+    color:  hsl(229, 25%, 31%);
+    font-size: 42px;
+    font-weight: 700;
+}
