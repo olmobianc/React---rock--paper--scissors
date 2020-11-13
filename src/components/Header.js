@@ -1,4 +1,6 @@
 import React from "react"
+import Score from "./Score"
+
 import './Header.css';
 
 function Header(props) {
@@ -10,8 +12,7 @@ function Header(props) {
                 {props.scissors}
             </div>
             <div className="score-container">
-                <div className="score-text">SCORE</div>
-                <div className="score-value">{props.score}</div>
+                <Score />
             </div>
         </div>
     )

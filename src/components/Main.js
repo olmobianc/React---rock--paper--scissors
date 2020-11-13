@@ -11,7 +11,9 @@ class Main extends React.Component {
         return(
             <div className="main-container">
                 <div className="triangle-container">
-                    <Choice />
+                    <Choice name="rock" />
+                    <Choice name="scissors" />
+                    <Choice name="paper" />
                 </div>
             </div>
         )

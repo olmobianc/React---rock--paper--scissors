@@ -9,13 +9,7 @@ class Choice extends React.Component {
         return(
             <div>
                 <div className="elem-container">
-                    <div className="paper-elem"></div>
-                </div>
-                <div className="elem-container">
-                    <div className="scissors-elem"></div>
-                </div>
-                <div className="elem-container">
-                    <div className="rock-elem"></div>
+                    <div className="choice-elem"></div>
                 </div>
             </div>
         )
