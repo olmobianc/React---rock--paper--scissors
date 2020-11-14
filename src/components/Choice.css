@@ -3,34 +3,19 @@
     justify-content: center;
     align-items: center;
     background: white;
-    border: 14px solid hsl(349, 71%, 52%);
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
+    border: 16px solid;
     border-radius: 50%;
+    cursor: pointer;
     z-index: 999;
+    box-shadow: 0 6px 0;
 }
 
-.choice-elem {
-    background-image: url("../images/icon-paper.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 60px;
-    padding: 20px;
-
+.elem-container:hover {
+    opacity: 90%;
 }
 
-.scissors-elem {
-    background-image: url("../images/icon-scissors.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 60px;
-    padding: 20px;
-}
-
-.rock-elem {
-    background-image: url("../images/icon-rock.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 60px;
-    padding: 20px;
+.elem-container:active {
+    transform: scale(.9);
 }
