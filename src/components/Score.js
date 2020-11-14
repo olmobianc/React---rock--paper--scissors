@@ -1,4 +1,5 @@
 import React from "react"
+import "./Score.css"
 
 class Score extends React.Component {
     constructor() {
@@ -8,7 +9,7 @@ class Score extends React.Component {
         return(
             <div>
                 <div className="score-text">SCORE</div>
-                <div className="score-value">0</div>
+                <div className="score-value">12</div>
             </div>    
         )
     }

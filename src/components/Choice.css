@@ -1,8 +1,13 @@
 .elem-container {
-    max-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: white;
     border: 14px solid hsl(349, 71%, 52%);
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
+    z-index: 999;
 }
 
 .choice-elem {

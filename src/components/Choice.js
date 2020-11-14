@@ -1,4 +1,6 @@
 import React from "react"
+
+import paper from '../images/icon-paper.svg'
 import './Choice.css';
 
 class Choice extends React.Component {
@@ -9,7 +11,7 @@ class Choice extends React.Component {
         return(
             <div>
                 <div className="elem-container">
-                    <div className="choice-elem"></div>
+                <img src={paper} />
                 </div>
             </div>
         )

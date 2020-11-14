@@ -5,29 +5,14 @@ import Footer from "./components/Footer"
 
 import './App.css';
 
-let userScore = 12
-
 function App() {
   return (
     <div className="App">
-      
-      <div className="App-header">
-        <Header 
-          rock = "ROCK"
-          paper = "PAPER"
-          scissors = "SCISSORS"
-          score = {userScore}
-         />
-      </div>
-
-      <div className="App-main">
+      <div className="container">
+        <Header rock = "ROCK" paper = "PAPER" scissors = "SCISSORS" />
         <Main />
-      </div>
-
-      <div className="App-footer">
         <Footer />
       </div>
-
     </div>
   );
 }
