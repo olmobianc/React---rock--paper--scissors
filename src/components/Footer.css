@@ -1,4 +1,8 @@
 .footer-container {
+    display: inline-flex;
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
     color: white;
     border: 1px solid white;
     float: right;
@@ -7,4 +11,5 @@
     border-radius: 10px;
     letter-spacing: 2px;
     font-weight: 700;
+    min-height: 20px;
 }

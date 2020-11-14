@@ -3,9 +3,11 @@ import './Footer.css';
 
 function Footer() {
     return(
-        <span className="footer-container">
-            RULES
-        </span>
+        <div className="footer-box">
+            <div className="footer-container">
+                RULES
+            </div>
+        </div>
     )
 }
 

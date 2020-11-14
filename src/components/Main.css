@@ -1,5 +1,5 @@
 .main-container {
-    margin: 60px auto 20px;
+    margin: 20px auto;
     text-align: center;
 }
 
@@ -7,5 +7,4 @@
     background-image: url("../images/bg-triangle.svg");
     background-repeat: no-repeat;
     background-position: center;
-    padding: 30px;
 }
