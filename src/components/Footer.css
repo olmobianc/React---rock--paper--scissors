@@ -12,4 +12,10 @@
     letter-spacing: 2px;
     font-weight: 700;
     min-height: 20px;
+    cursor: pointer;
+}
+
+.footer-container:hover {
+    background: white;
+    color: hsl(214, 47%, 23%);
 }

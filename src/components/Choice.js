@@ -1,6 +1,5 @@
 import React from "react"
 
-import paper from '../images/icon-paper.svg'
 import './Choice.css';
 
 class Choice extends React.Component {
@@ -11,7 +10,7 @@ class Choice extends React.Component {
         return(
             <div>
                 <div className="elem-container">
-                <img src={paper} />
+                    <img src={this.props.name} />
                 </div>
             </div>
         )
