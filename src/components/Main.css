@@ -4,7 +4,16 @@
 }
 
 .triangle-container {
+    display: grid;
+    grid-template-areas: "left right"
+                         "bottom bottom";
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
     background-image: url("../images/bg-triangle.svg");
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.elem-box:last-child {
+    grid-area: bottom;
 }
