@@ -1,6 +1,7 @@
 import React from "react"
 
 import rulesImage from "../images/image-rules.svg"
+import iconClose from "../images/icon-close.svg"
 
 import './Footer.css';
 
@@ -15,8 +16,10 @@ class Footer extends React.Component {
     }
 
     handleClick() {
-        this.setState({
-            isVisible: true
+        this.setState((prevState) => {
+            return {
+                isVisible: !prevState.isVisible
+            }
         })
     }
 
@@ -24,7 +27,10 @@ class Footer extends React.Component {
         return(
             <div>
                 <div id="rules-image-conatinaer" style={{ display: (this.state.isVisible ? "block" : "none")}}>
-                    <h2 className="rules-title">RULES</h2>
+                    <div className="rules-title-container">
+                        <h2 className="rules-title">RULES</h2>
+                        <img src={iconClose} alt="close-icon" className="close-icon" onClick={this.handleClick} />
+                    </div>
                     <img src={rulesImage} alt="rules"/>
                 </div>
                 <div className="footer-box">
