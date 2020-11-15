@@ -24,6 +24,7 @@
     .triangle-container {
         padding: 10px;
         margin-top: 70px;
-        grid-gap: 35px 30px;
+        padding: 0;
+        grid-gap: 30px 36px;
     }
 }

@@ -14,7 +14,7 @@ class Choice extends React.Component {
         return(
             <div className="elem-box">
                 <div style={{borderColor: this.state.borderColor, color: this.state.extraBorderColor}} className="elem-container">
-                    <img src={this.props.image} />
+                    <img src={this.props.image} className="choice-image" />
                 </div>
             </div>
         )
