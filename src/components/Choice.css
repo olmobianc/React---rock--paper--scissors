@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     background: white;
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     border: 16px solid;
     border-radius: 50%;
     cursor: pointer;
@@ -18,4 +18,12 @@
 
 .elem-container:active {
     transform: scale(.9);
+}
+
+/*MOBILE*/
+@media(max-width:768px) {
+    .elem-container {
+        width: 100px;
+        height: 95px;
+    }
 }

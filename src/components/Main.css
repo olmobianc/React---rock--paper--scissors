@@ -12,8 +12,18 @@
     background-image: url("../images/bg-triangle.svg");
     background-repeat: no-repeat;
     background-position: center;
+    padding: 40px 0 0;
 }
 
 .elem-box:last-child {
     grid-area: bottom;
+}
+
+/*MOBILE*/
+@media(max-width:768px) {
+    .triangle-container {
+        padding: 10px;
+        margin-top: 70px;
+        grid-gap: 35px 30px;
+    }
 }

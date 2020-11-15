@@ -40,3 +40,20 @@
     line-height: 0.9;
     font-weight: 700;
 }
+
+/*MOBILE*/
+@media(max-width:768px) {
+    .no-margin {
+        font-size: 26px;
+    }
+    .score-container {
+        width: 50px;
+        height: 76px;
+    }
+    .score-value {
+        font-size: 50px;
+    }
+    .score-text {
+        font-size: 14px;
+    }
+}
