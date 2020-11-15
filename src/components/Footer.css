@@ -19,6 +19,25 @@
     color: hsl(214, 47%, 23%);
 }
 
+#rules-image-conatinaer {
+    display: none;
+    background: white;
+    width: fit-content;
+    margin: auto;
+    padding: 20px 50px;
+    border-radius: 10px;
+    z-index: 999999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rules-title {
+    color: rgb(59, 66, 98);
+    margin-bottom: 35px;
+}
+
 /*MOBILE*/
 @media(max-width:768px) {
     .footer-container {
