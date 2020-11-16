@@ -64,14 +64,30 @@ class Main extends React.Component {
                     </div>
                 </div>
 
-                {/*RESULT PAGE*/} 
-                <div 
-                    className="elem-container" 
-                    style={{display: (!this.state.onScreen ? "flex" : "none"), 
-                    borderColor: this.state.choiceBorderColor, 
-                    color: this.state.choiceExtraBorderColor}}
-                >
-                    <img src={this.state.choiceName} className="choice-image" alt="img" />
+                {/*RESULT PAGE*/}
+                <div className="result-wrapper">
+                    <div className="user-result-box">
+                        <h4 className="result-title">YOU PICKED</h4>
+                        <div 
+                            className="elem-container result-container"
+                            style={{display: (!this.state.onScreen ? "flex" : "none"), 
+                            borderColor: this.state.choiceBorderColor, 
+                            color: this.state.choiceExtraBorderColor}}
+                        >
+                            <img src={this.state.choiceName} className="choice-image" alt="img" />
+                        </div>
+                    </div>
+                    <div className="house-result-box">
+                        <h4 className="result-title">THE HOUSE PICKED</h4>
+                        <div 
+                            className="elem-container result-container"
+                            style={{display: (!this.state.onScreen ? "flex" : "none"), 
+                            borderColor: this.state.choiceBorderColor, 
+                            color: this.state.choiceExtraBorderColor}}
+                        >
+                            <img src={this.state.choiceName} className="choice-image" alt="img" />
+                        </div>
+                    </div>
                 </div>
             </div>
 

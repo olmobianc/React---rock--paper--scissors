@@ -19,6 +19,38 @@
     grid-area: bottom;
 }
 
+/*result section*/
+.result-wrapper {
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.user-result-box {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.result-title {
+}
+
+.house-result-box {
+    grid-area: right;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.result-container {
+    margin-top: 40px;
+    padding: 10px;
+}
+
 /*MOBILE*/
 @media(max-width:768px) {
     .triangle-container {
