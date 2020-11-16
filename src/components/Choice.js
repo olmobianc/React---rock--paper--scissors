@@ -7,23 +7,26 @@ class Choice extends React.Component {
         super(props)
         this.state = {
             name: props.name,
+            image: props.image,
             borderColor: props.borderColor,
             extraBorderColor: props.extraBorderColor
         }
-        this.handleClick = this.handleClick.bind(this)
-    }
-
-    handleClick() {
-        console.log(this.state.name)
     }
 
     render() {
         return(
             <div className="elem-box">
                 <div 
-                    style={{borderColor: this.state.borderColor, color: this.state.extraBorderColor}} 
+                    style={{
+                        borderColor: this.state.borderColor, 
+                        color: this.state.extraBorderColor
+                    }} 
                     className="elem-container"
-                    onClick={this.handleClick}
+                    onClick={this.props.handleClick(
+                        this.state.image, 
+                        this.state.borderColor, 
+                        this.state.extraBorderColor
+                    )}
                 >
                     <img src={this.props.image} className="choice-image" alt="img" />
                 </div>
