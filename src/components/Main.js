@@ -15,6 +15,7 @@ class Main extends React.Component {
             choiceName: '',
             choiceBorderColor: '',
             choiceExtraBorderColor: '',
+            houseChoice: ''
         }
         this.handleClick = this.handleClick.bind(this)
     }
@@ -27,6 +28,18 @@ class Main extends React.Component {
             choiceExtraBorderColor,
         })
     }
+
+    componentDidMount() {
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+        const index = getRandomInt(3)
+        console.log(index)
+        this.setState({
+            houseChoice: index
+        })
+    }
+      
 
     render() {
         return(
@@ -65,28 +78,65 @@ class Main extends React.Component {
                 </div>
 
                 {/*RESULT PAGE*/}
-                <div className="result-wrapper">
+                <div className="result-wrapper" style={{display: (!this.state.onScreen ? "grid" : "none")}}>
+
                     <div className="user-result-box">
                         <h4 className="result-title">YOU PICKED</h4>
                         <div 
                             className="elem-container result-container"
-                            style={{display: (!this.state.onScreen ? "flex" : "none"), 
-                            borderColor: this.state.choiceBorderColor, 
-                            color: this.state.choiceExtraBorderColor}}
+                            style={{
+                                borderColor: this.state.choiceBorderColor, 
+                                color: this.state.choiceExtraBorderColor
+                            }}
                         >
                             <img src={this.state.choiceName} className="choice-image" alt="img" />
                         </div>
                     </div>
+
                     <div className="house-result-box">
                         <h4 className="result-title">THE HOUSE PICKED</h4>
-                        <div 
-                            className="elem-container result-container"
-                            style={{display: (!this.state.onScreen ? "flex" : "none"), 
-                            borderColor: this.state.choiceBorderColor, 
-                            color: this.state.choiceExtraBorderColor}}
-                        >
-                            <img src={this.state.choiceName} className="choice-image" alt="img" />
-                        </div>
+
+                        {this.state.houseChoice === 0 ? (
+
+                            /*1*/
+                            <div 
+                                className="elem-container result-container"
+                                style={{ 
+                                    borderColor:"hsl(230, 89%, 62%)",
+                                    color:"hsl(230, 89%, 65%)" 
+                                }}
+                            >
+                                <img src={paper} className="choice-image" alt="img" />
+                            </div>
+                        ) : ( 
+
+                            this.state.houseChoice === 1 ? (
+                            
+                            /*2*/
+                            <div 
+                                className="elem-container result-container"
+                                style={{ 
+                                    borderColor:"hsl(39, 89%, 49%)", 
+                                    color:"hsl(40, 84%, 53%)" 
+                                }}
+                            >
+                                <img src={scissors} className="choice-image" alt="img" />
+                            </div>
+                        ) : (
+
+                            /*3*/
+                            <div 
+                                className="elem-container result-container"
+                                    style={{ 
+                                        borderColor:"hsl(349, 71%, 52%)", 
+                                        color:"hsl(349, 70%, 56%)" 
+                                    }}
+                            >
+                                <img src={rock} className="choice-image" alt="img" />
+                            </div>
+                        ))
+                        }
+
                     </div>
                 </div>
             </div>
