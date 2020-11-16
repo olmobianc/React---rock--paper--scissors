@@ -11,21 +11,25 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
     }
+
     render() {
         return(
             <div className="main-container">
                 <div className="triangle-container">
-                    <Choice 
+                    <Choice
+                        name="paper"
                         image={paper} 
                         borderColor="hsl(230, 89%, 62%)" 
-                        extraBorderColor="hsl(230, 89%, 65%)" 
+                        extraBorderColor="hsl(230, 89%, 65%)"
                     />
-                    <Choice 
+                    <Choice
+                        name="scissors"
                         image={scissors} 
                         borderColor="hsl(39, 89%, 49%)" 
                         extraBorderColor="hsl(40, 84%, 53%)" 
                     />
                     <Choice 
+                        name="rock"
                         image={rock} 
                         borderColor="hsl(349, 71%, 52%)" 
                         extraBorderColor="hsl(349, 70%, 56%)" 
