@@ -17,7 +17,8 @@ class Main extends React.Component {
             choiceImage: '',
             choiceBorderColor: '',
             choiceExtraBorderColor: '',
-            houseChoice: ''
+            houseChoice: '',
+            results:''
         }
         this.handleClick = this.handleClick.bind(this)
         this.handleTryAgainClick = this.handleTryAgainClick.bind(this)
@@ -42,14 +43,35 @@ class Main extends React.Component {
             houseChoice: index
         })
 
-        const results = this.getResults(choiceName, this.state.houseChoice) /*choiceName is fine but houseChoice is undefined here */
-        console.log(results)
+        const results = this.getResults(choiceName, index).toUpperCase() /*choiceName is fine but houseChoice is undefined here */
+        this.setState({
+            results: results
+        })
     }
 
-    /*function that get the results of the game*/
+    /*function that get the main logic and the results of the game*/
     getResults(choiceName, houseChoice) {
-        if(houseChoice === 0)
-            return houseChoice
+        if(choiceName === "paper" && houseChoice === 0) {
+            return "draw"
+        } else if(choiceName === "paper" && houseChoice === 1) {
+            return "lose"
+        } else if(choiceName === "paper" && houseChoice === 2) {
+            return "win"
+        }
+        if(choiceName === "rock" && houseChoice === 0) {
+            return "lose"
+        } else if(choiceName === "rock" && houseChoice === 1) {
+            return "win"
+        } else if(choiceName === "rock" && houseChoice === 2) {
+            return "draw"
+        }
+        if(choiceName === "scissors" && houseChoice === 0) {
+            return "win"
+        } else if(choiceName === "scissors" && houseChoice === 1) {
+            return "draw"
+        } else if(choiceName === "scissors" && houseChoice === 2) {
+            return "lose"
+        }
     }
 
     /*function that switches the screen and resets the index of the house*/
@@ -161,7 +183,7 @@ class Main extends React.Component {
 
                     </div>
                     <div className="final-result-container">
-                        <h1 className="bold">YOU ???</h1>
+                    <h1 className="bold">YOU {this.state.results}</h1>
                         <TryAgain onClick={this.handleTryAgainClick}/>
                     </div>
                 </div>
