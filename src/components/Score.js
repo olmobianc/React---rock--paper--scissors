@@ -5,9 +5,10 @@ class Score extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            score: 0
+            score: props.score
         }
     }
+
     render() {
         return(
             <div>

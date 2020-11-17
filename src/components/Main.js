@@ -39,14 +39,15 @@ class Main extends React.Component {
             return Math.floor(Math.random() * Math.floor(max));
         }
         const index = getRandomInt(3)
-        this.setState({
-            houseChoice: index
-        })
 
-        const results = this.getResults(choiceName, index).toUpperCase() /*choiceName is fine but houseChoice is undefined here */
-        this.setState({
-            results: results
-        })
+            this.setState({
+                houseChoice: index
+            })
+
+            const results = this.getResults(choiceName, index).toUpperCase()
+            this.setState({
+                results: results
+            })
     }
 
     /*function that get the main logic and the results of the game*/

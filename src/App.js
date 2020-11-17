@@ -5,16 +5,29 @@ import Footer from "./components/Footer"
 
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <div className="container">
-        <Header rock = "ROCK" paper = "PAPER" scissors = "SCISSORS" />
-        <Main />
-        <Footer />
+class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      score: 0
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+        <div className="container">
+          <Header 
+              rock = "ROCK" 
+              paper = "PAPER" 
+              scissors = "SCISSORS" 
+              score={this.state.score} 
+          />
+          <Main />
+          <Footer />
+        </div>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
 export default App;
