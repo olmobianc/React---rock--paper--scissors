@@ -1,5 +1,6 @@
 import React from "react"
 import Choice from "./Choice"
+import TryAgain from "./TryAgain"
 
 import paper from '../images/icon-paper.svg'
 import rock from '../images/icon-rock.svg'
@@ -13,29 +14,49 @@ class Main extends React.Component {
         this.state = {
             onScreen: true,
             choiceName: '',
+            choiceImage: '',
             choiceBorderColor: '',
             choiceExtraBorderColor: '',
             houseChoice: ''
         }
         this.handleClick = this.handleClick.bind(this)
+        this.handleTryAgainClick = this.handleTryAgainClick.bind(this)
     }
 
-    handleClick = (choiceName, choiceBorderColor, choiceExtraBorderColor) => () => {
+    /*function that handles the user choice*/
+    handleClick = (choiceName, choiceImage, choiceBorderColor, choiceExtraBorderColor) => () => {
         this.setState({
             onScreen: false,
             choiceName,
+            choiceImage,
             choiceBorderColor,
             choiceExtraBorderColor,
         })
-    }
 
-    componentDidMount() {
+        /*function that get a random number between 0 and 2, and set this number to the house index*/
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
         const index = getRandomInt(3)
         this.setState({
             houseChoice: index
+        })
+
+        const results = this.getResults(choiceName, this.state.houseChoice) /*choiceName is fine but houseChoice is undefined here */
+        console.log(results)
+    }
+
+    /*function that get the results of the game*/
+    getResults(choiceName, houseChoice) {
+        if(houseChoice === 0)
+            return houseChoice
+    }
+
+    /*function that switches the screen and resets the index of the house*/
+    handleTryAgainClick() {
+        this.setState({
+            onScreen: true,
+            houseChoice: ''
         })
     }
       
@@ -88,7 +109,7 @@ class Main extends React.Component {
                                 color: this.state.choiceExtraBorderColor
                             }}
                         >
-                            <img src={this.state.choiceName} className="choice-image" alt="img" />
+                            <img src={this.state.choiceImage} className="choice-image" alt="img" />
                         </div>
                     </div>
 
@@ -141,7 +162,7 @@ class Main extends React.Component {
                     </div>
                     <div className="final-result-container">
                         <h1 className="bold">YOU ???</h1>
-                        <div className="try-again-button">TRY AGAIN</div>
+                        <TryAgain onClick={this.handleTryAgainClick}/>
                     </div>
                 </div>
             </div>

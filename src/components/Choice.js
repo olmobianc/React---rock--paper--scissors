@@ -23,6 +23,7 @@ class Choice extends React.Component {
                     }} 
                     className="elem-container"
                     onClick={this.props.handleClick(
+                        this.state.name,
                         this.state.image, 
                         this.state.borderColor, 
                         this.state.extraBorderColor
