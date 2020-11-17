@@ -22,7 +22,8 @@
 /*result section*/
 .result-wrapper {
     display: grid;
-    grid-template-areas: "left right";
+    grid-template-areas: "left right"
+                         "bottom bottom";
     grid-template-columns: 1fr 1fr;
     justify-items: center;
 }
@@ -35,8 +36,6 @@
     margin-top: 40px;
 }
 
-.result-title {
-}
 
 .house-result-box {
     grid-area: right;
@@ -51,12 +50,53 @@
     padding: 10px;
 }
 
+.final-result-container {
+    grid-area: bottom;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.bold {
+    margin: 0;
+    font-weight: 700;
+    font-size: 46px;
+}
+
+.try-again-button {
+    min-width: 200px;
+    background: white;
+    color: rgb(59, 66, 98);
+    border: 1px solid white;
+    border-radius: 0.5em;
+    padding: 12px;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+}
+
 /*MOBILE*/
 @media(max-width:768px) {
     .triangle-container {
         padding: 10px;
-        margin-top: 70px;
+        margin-top: 40px;
         padding: 0;
         grid-gap: 30px 36px;
+    }
+    .result-container {
+        margin-top: 12px;
+    }
+    .user-result-box {
+        margin-top: 22px;
+    }
+    .house-result-box {
+        margin-top: 22px;
+    }
+    .final-result-container {
+        grid-area: bottom;
+        margin-top: 22px;
+        text-align: center;
+    }
+    .bold {
+        margin-bottom: 10px;
+        font-size: 46px;
     }
 }

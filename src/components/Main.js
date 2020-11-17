@@ -34,7 +34,6 @@ class Main extends React.Component {
             return Math.floor(Math.random() * Math.floor(max));
         }
         const index = getRandomInt(3)
-        console.log(index)
         this.setState({
             houseChoice: index
         })
@@ -108,6 +107,7 @@ class Main extends React.Component {
                             >
                                 <img src={paper} className="choice-image" alt="img" />
                             </div>
+
                         ) : ( 
 
                             this.state.houseChoice === 1 ? (
@@ -122,6 +122,7 @@ class Main extends React.Component {
                             >
                                 <img src={scissors} className="choice-image" alt="img" />
                             </div>
+
                         ) : (
 
                             /*3*/
@@ -137,6 +138,10 @@ class Main extends React.Component {
                         ))
                         }
 
+                    </div>
+                    <div className="final-result-container">
+                        <h1 className="bold">YOU ???</h1>
+                        <div className="try-again-button">TRY AGAIN</div>
                     </div>
                 </div>
             </div>
