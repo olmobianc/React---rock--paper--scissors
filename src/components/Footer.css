@@ -54,7 +54,7 @@
 }
 
 /*MOBILE*/
-@media(max-width:768px) {
+@media(max-width:568px) {
     .footer-container {
         display: block;
         position: static;

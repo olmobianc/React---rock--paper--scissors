@@ -50,8 +50,8 @@ class Main extends React.Component {
             results: results,
         })
 
+        /*****************calling setScore()********************/
         if(results === "WIN") {
-            /*what to put here*/
             this.props.setScore(1)
         } else if (results === "LOSE") {
             this.props.setScore(-1)

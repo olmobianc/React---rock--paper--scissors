@@ -42,7 +42,7 @@
 }
 
 /*MOBILE*/
-@media(max-width:768px) {
+@media(max-width:568px) {
     .no-margin {
         font-size: 26px;
     }
