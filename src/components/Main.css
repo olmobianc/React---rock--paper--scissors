@@ -22,10 +22,11 @@
 /*result section*/
 .result-wrapper {
     display: grid;
-    grid-template-areas: "left right"
-                         "bottom bottom";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left mid right"
+                         "bottom bottom bottom";
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    grid-gap: 10px;
 }
 
 .user-result-box {
@@ -51,9 +52,12 @@
 }
 
 .final-result-container {
-    grid-area: bottom;
+    grid-area: mid;
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    justify-content: center;
 }
 
 .bold {
@@ -84,6 +88,13 @@
     .result-container {
         margin-top: 12px;
     }
+    .result-wrapper {
+        display: grid;
+        grid-template-areas: "left right"
+                            "bottom bottom";
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
     .user-result-box {
         margin-top: 22px;
     }
@@ -103,7 +114,18 @@
 
 /*TABLET*/
 @media(min-width: 599px) and (max-width: 1168px) {
-    .triangle-container {
+    .result-wrapper {
+        display: grid;
+        grid-template-areas: "left right"
+                            "bottom bottom";
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        justify-items: center;
+    }
+    .final-result-container {
+        grid-area: bottom;
+        margin-top: 22px;
+        text-align: center;
     }
 }
 
