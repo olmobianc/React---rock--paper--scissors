@@ -19,8 +19,6 @@ class Main extends React.Component {
             choiceExtraBorderColor: '',
             houseChoice: '',
             results:'',
-            score: 0,
-            setScore: props.setScore
         }
         this.handleClick = this.handleClick.bind(this)
         this.handleTryAgainClick = this.handleTryAgainClick.bind(this)
@@ -53,27 +51,13 @@ class Main extends React.Component {
         })
 
         if(results === "WIN") {
-            console.log(this.state.score) 
-            this.setState((prevState) => {
-                return {
-                    score: prevState.score + 1 
-                }
-            })
-        } else if (results === "LOSE" && this.state.score > 0) {
-            console.log(this.state.score)
-            this.setState((prevState) => {
-                return {
-                    score: prevState.score - 1
-                }
-            })
+            /*what to put here*/
+            this.props.setScore(1)
+        } else if (results === "LOSE") {
+            this.props.setScore(-1)
         }
         else {
-            console.log(this.state.score)
-            this.setState((prevState) => {
-                return {
-                    score: prevState.score
-                }
-            })
+            this.props.setScore(0)
         }
     }
 
