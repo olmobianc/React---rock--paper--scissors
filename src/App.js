@@ -15,7 +15,11 @@ class App extends React.Component {
   }
 
   setScore(value) {
-    if (this.state.score >= 0) {
+    if (this.state.score > 0) {
+      this.setState({
+        score: this.state.score + value
+      })
+    } else if(this.state.score === 0 && value !== -1) {
       this.setState({
         score: this.state.score + value
       })

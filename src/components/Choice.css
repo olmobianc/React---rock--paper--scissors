@@ -25,7 +25,7 @@
 }
 
 /*MOBILE*/
-@media(max-width:568px) {
+@media(max-width:599px) {
     .elem-container {
         width: 130px;
         height: 130px;
@@ -35,3 +35,11 @@
         margin-bottom: 32px;
     }
 }
+
+/*TABLET*/
+@media(min-width: 599px) and (max-width: 1168px) {
+    .elem-container:first-child {
+        margin-bottom: 32px;
+    }
+}
+
