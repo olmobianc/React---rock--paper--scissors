@@ -9,9 +9,19 @@ class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      score: 0
+      score: 12
     }
+    this.setScore = this.setScore.bind(this)
   }
+
+  setScore() {
+    this.setState((prevState) => {
+      return {
+        score: prevState.score + 1
+      }
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -20,9 +30,9 @@ class App extends React.Component {
               rock = "ROCK" 
               paper = "PAPER" 
               scissors = "SCISSORS" 
-              score={this.state.score} 
+              score = {this.state.score} 
           />
-          <Main />
+          <Main setScore = {this.state.setScore}/>
           <Footer />
         </div>
       </div>

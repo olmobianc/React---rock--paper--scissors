@@ -18,7 +18,9 @@ class Main extends React.Component {
             choiceBorderColor: '',
             choiceExtraBorderColor: '',
             houseChoice: '',
-            results:''
+            results:'',
+            score: 0,
+            setScore: props.setScore
         }
         this.handleClick = this.handleClick.bind(this)
         this.handleTryAgainClick = this.handleTryAgainClick.bind(this)
@@ -38,16 +40,41 @@ class Main extends React.Component {
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
+
         const index = getRandomInt(3)
 
-            this.setState({
-                houseChoice: index
-            })
+        this.setState({
+            houseChoice: index
+        })
 
-            const results = this.getResults(choiceName, index).toUpperCase()
-            this.setState({
-                results: results
+        const results = this.getResults(choiceName, index).toUpperCase()
+        this.setState({
+            results: results,
+        })
+
+        if(results === "WIN") {
+            console.log(this.state.score) 
+            this.setState((prevState) => {
+                return {
+                    score: prevState.score + 1 
+                }
             })
+        } else if (results === "LOSE" && this.state.score > 0) {
+            console.log(this.state.score)
+            this.setState((prevState) => {
+                return {
+                    score: prevState.score - 1
+                }
+            })
+        }
+        else {
+            console.log(this.state.score)
+            this.setState((prevState) => {
+                return {
+                    score: prevState.score
+                }
+            })
+        }
     }
 
     /*function that get the main logic and the results of the game*/
@@ -82,8 +109,7 @@ class Main extends React.Component {
             houseChoice: ''
         })
     }
-      
-
+    
     render() {
         return(
             <div>

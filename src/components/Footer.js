@@ -5,7 +5,6 @@ import iconClose from "../images/icon-close.svg"
 
 import './Footer.css';
 
-var rulesBox = document.getElementById("rules-image-container")
 class Footer extends React.Component {
     constructor() {
         super()
