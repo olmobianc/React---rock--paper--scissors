@@ -26,7 +26,7 @@
                          "bottom bottom bottom";
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
 
 .user-result-box {
@@ -48,9 +48,9 @@
 .result-container {
     margin-top: 40px;
     padding: 10px;
-    width: 240px;
-    height: 240px;
-    border: 24px solid;
+    width: 220px;
+    height: 220px;
+    border: 22px solid;
 }
 
 .final-result-container {
