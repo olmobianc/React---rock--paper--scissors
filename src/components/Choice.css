@@ -30,6 +30,7 @@
         width: 130px;
         height: 130px;
         box-sizing: border-box;
+        box-shadow: 0 6px 0;
     }
     .elem-container:first-child {
         margin-bottom: 32px;

@@ -19,6 +19,7 @@ class Main extends React.Component {
             choiceExtraBorderColor: '',
             houseChoice: '',
             results:'',
+            flag: false
         }
         this.handleClick = this.handleClick.bind(this)
         this.handleTryAgainClick = this.handleTryAgainClick.bind(this)
@@ -32,34 +33,41 @@ class Main extends React.Component {
             choiceImage,
             choiceBorderColor,
             choiceExtraBorderColor,
+            houseChoice: 4
         })
+        
 
+        
         /*function that get a random number between 0 and 2, and set this number to the house index*/
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
 
-        const index = getRandomInt(3)
+        this.sleep(1000).then(() => {
+            const index = getRandomInt(3)
+            this.setState({
+                houseChoice: index
+            })
+            const results = this.getResults(choiceName, index).toUpperCase()
+            this.setState({
+                results: results,
+            })
 
-        this.setState({
-            houseChoice: index
+            /*****************calling setScore()********************/
+            if(results === "WIN") {
+                this.props.setScore(1)
+            } else if (results === "LOSE") {
+                this.props.setScore(-1)
+            }
+            else {
+                this.props.setScore(0)
+            }
         })
-
-        const results = this.getResults(choiceName, index).toUpperCase()
-        this.setState({
-            results: results,
-        })
-
-        /*****************calling setScore()********************/
-        if(results === "WIN") {
-            this.props.setScore(1)
-        } else if (results === "LOSE") {
-            this.props.setScore(-1)
-        }
-        else {
-            this.props.setScore(0)
-        }
     }
+
+    sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
 
     /*function that get the main logic and the results of the game*/
     getResults(choiceName, houseChoice) {
@@ -68,16 +76,25 @@ class Main extends React.Component {
         } else if(choiceName === "paper" && houseChoice === 1) {
             return "lose"
         } else if(choiceName === "paper" && houseChoice === 2) {
+            this.setState({
+                flag: true
+            })
             return "win"
         }
         if(choiceName === "rock" && houseChoice === 0) {
             return "lose"
         } else if(choiceName === "rock" && houseChoice === 1) {
+            this.setState({
+                flag: true
+            })
             return "win"
         } else if(choiceName === "rock" && houseChoice === 2) {
             return "draw"
         }
         if(choiceName === "scissors" && houseChoice === 0) {
+            this.setState({
+                flag: true
+            })
             return "win"
         } else if(choiceName === "scissors" && houseChoice === 1) {
             return "draw"
@@ -90,7 +107,8 @@ class Main extends React.Component {
     handleTryAgainClick() {
         this.setState({
             onScreen: true,
-            houseChoice: ''
+            houseChoice: '',
+            flag: false
         })
     }
     
@@ -148,7 +166,8 @@ class Main extends React.Component {
 
                     <div className="house-result-box">
                         <h4 className="result-title">THE HOUSE PICKED</h4>
-
+                        
+                        {/************ starting the conditional rendering  **************/}
                         {this.state.houseChoice === 0 ? (
 
                             /*1*/
@@ -177,7 +196,7 @@ class Main extends React.Component {
                                 <img src={scissors} className="choice-image" alt="img" />
                             </div>
 
-                        ) : (
+                        ) : this.state.houseChoice === 2 ? (
 
                             /*3*/
                             <div 
@@ -189,14 +208,18 @@ class Main extends React.Component {
                             >
                                 <img src={rock} className="choice-image" alt="img" />
                             </div>
-                        ))
+                        ) : null)
                         }
 
                     </div>
-                    <div className="final-result-container">
-                    <h1 className="bold">YOU {this.state.results}</h1>
-                        <TryAgain onClick={this.handleTryAgainClick}/>
-                    </div>
+                    {this.state.houseChoice === 4 ? 
+                        <div className="final-result-container">THE HOUSE IS PICKING...</div> 
+                        : (
+                        <div className="final-result-container">
+                            <h1 className="bold">YOU {this.state.results}</h1>
+                            <TryAgain onClick={this.handleTryAgainClick}/>
+                        </div>
+                    )}
                 </div>
             </div>
 
