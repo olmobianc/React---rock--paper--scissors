@@ -26,7 +26,7 @@
                          "bottom bottom bottom";
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    grid-gap: 20px;
+    grid-gap: 15px;
 }
 
 .user-result-box {
@@ -48,9 +48,9 @@
 .result-container {
     margin-top: 40px;
     padding: 10px;
-    width: 220px;
-    height: 220px;
-    border: 22px solid;
+    width: 200px;
+    height: 200px;
+    border: 20px solid;
 }
 
 .final-result-container {
@@ -64,6 +64,7 @@
 
 .bold {
     margin: 0;
+    margin-bottom: 20px;
     font-weight: 700;
     font-size: 46px;
 }
@@ -139,9 +140,9 @@
     }
     .result-container {
         margin-top: 12px;
-        width: 190px;
-        height: 190px;
-        border: 20px solid;
+        width: 180px;
+        height: 180px;
+        border: 18px solid;
     }
     .final-result-container {
         grid-area: bottom;

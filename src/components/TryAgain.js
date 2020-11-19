@@ -7,7 +7,7 @@ class TryAgain extends React.Component {
 
     render() {
         return(
-            <div className="try-again-button" onClick={this.props.onClick}>TRY AGAIN</div>
+            <div className="try-again-button" onClick={this.props.onClick}>PLAY AGAIN</div>
         )
     }
 
