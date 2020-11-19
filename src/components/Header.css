@@ -1,5 +1,5 @@
 .nav-container {
-    max-width: 65%;
+    max-width: 82%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,6 +47,7 @@
 @media(max-width:599px) {
     .nav-container {
         max-width: 80%;
+        margin-bottom: 40px;
     }
     .no-margin {
         font-size: 26px;

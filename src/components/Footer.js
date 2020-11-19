@@ -25,7 +25,7 @@ class Footer extends React.Component {
     render() {
         return(
             <div>
-                <div id="rules-image-conatinaer" style={{ display: (this.state.isVisible ? "block" : "none")}}>
+                <div id="rules-image-conatinaer" style={{ display: (this.state.isVisible ? "flex" : "none")}}>
                     <div className="rules-title-container">
                         <h2 className="rules-title">RULES</h2>
                         <img src={iconClose} alt="close-icon" className="close-icon" onClick={this.handleClick} />

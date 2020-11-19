@@ -21,6 +21,7 @@
 
 #rules-image-conatinaer {
     display: none;
+    flex-direction: column;
     background: white;
     width: fit-content;
     margin: auto;
@@ -69,5 +70,16 @@
         font-weight: 700;
         min-height: 20px;
         cursor: pointer;
+    }
+    #rules-image-conatinaer {
+        height: 100vh;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .rules-title-container {
+        justify-content: space-evenly;
+        margin-bottom: 60px;
     }
 }

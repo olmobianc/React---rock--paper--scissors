@@ -19,7 +19,8 @@ class Main extends React.Component {
             choiceExtraBorderColor: '',
             houseChoice: '',
             results:'',
-            flag: false
+            victory: false,
+            loss: false,
         }
         this.handleClick = this.handleClick.bind(this)
         this.handleTryAgainClick = this.handleTryAgainClick.bind(this)
@@ -35,14 +36,13 @@ class Main extends React.Component {
             choiceExtraBorderColor,
             houseChoice: 4
         })
-        
-
-        
-        /*function that get a random number between 0 and 2, and set this number to the house index*/
+                
+        /*function that get a random number between 0 and 2*/
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
-
+        
+        /*function that get set the random number to the house index (with delay!)*/
         this.sleep(1000).then(() => {
             const index = getRandomInt(3)
             this.setState({
@@ -74,18 +74,24 @@ class Main extends React.Component {
         if(choiceName === "paper" && houseChoice === 0) {
             return "draw"
         } else if(choiceName === "paper" && houseChoice === 1) {
+            this.setState({
+                loss: true
+            })
             return "lose"
         } else if(choiceName === "paper" && houseChoice === 2) {
             this.setState({
-                flag: true
+                victory: true
             })
             return "win"
         }
         if(choiceName === "rock" && houseChoice === 0) {
+            this.setState({
+                loss: true
+            })
             return "lose"
         } else if(choiceName === "rock" && houseChoice === 1) {
             this.setState({
-                flag: true
+                victory: true
             })
             return "win"
         } else if(choiceName === "rock" && houseChoice === 2) {
@@ -93,12 +99,15 @@ class Main extends React.Component {
         }
         if(choiceName === "scissors" && houseChoice === 0) {
             this.setState({
-                flag: true
+                victory: true
             })
             return "win"
         } else if(choiceName === "scissors" && houseChoice === 1) {
             return "draw"
         } else if(choiceName === "scissors" && houseChoice === 2) {
+            this.setState({
+                loss: true
+            })
             return "lose"
         }
     }
@@ -108,7 +117,8 @@ class Main extends React.Component {
         this.setState({
             onScreen: true,
             houseChoice: '',
-            flag: false
+            victory: false,
+            loss: false
         })
     }
     
@@ -154,6 +164,14 @@ class Main extends React.Component {
                     <div className="user-result-box">
                         <h4 className="result-title">YOU PICKED</h4>
                         <div 
+                            id={
+                                (
+                                    this.state.choiceName === "paper" ||
+                                    this.state.choiceName === "rock" ||
+                                    this.state.choiceName === "scissors"
+                                ) 
+                                && 
+                                    this.state.victory ? "extra-shadows" : ""}
                             className="elem-container result-container"
                             style={{
                                 borderColor: this.state.choiceBorderColor, 
@@ -171,7 +189,11 @@ class Main extends React.Component {
                         {this.state.houseChoice === 0 ? (
 
                             /*1*/
-                            <div 
+                            <div
+                                id={
+                                        this.state.houseChoice === 0
+                                    && 
+                                        this.state.loss ? "extra-shadows" : ""}
                                 className="elem-container result-container"
                                 style={{ 
                                     borderColor:"hsl(230, 89%, 62%)",
@@ -186,7 +208,11 @@ class Main extends React.Component {
                             this.state.houseChoice === 1 ? (
                             
                             /*2*/
-                            <div 
+                            <div
+                                id={
+                                    this.state.houseChoice === 1
+                                && 
+                                    this.state.loss ? "extra-shadows" : ""}
                                 className="elem-container result-container"
                                 style={{ 
                                     borderColor:"hsl(39, 89%, 49%)", 
@@ -200,6 +226,10 @@ class Main extends React.Component {
 
                             /*3*/
                             <div 
+                                id={
+                                    this.state.houseChoice === 2
+                                && 
+                                    this.state.loss ? "extra-shadows" : ""}
                                 className="elem-container result-container"
                                     style={{ 
                                         borderColor:"hsl(349, 71%, 52%)", 
